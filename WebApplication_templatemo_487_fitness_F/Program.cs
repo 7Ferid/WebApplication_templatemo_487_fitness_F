@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using WebApplication_templatemo_487_fitness_F.Contexts;
+
 namespace WebApplication_templatemo_487_fitness_F
 {
     public class Program
@@ -8,6 +11,11 @@ namespace WebApplication_templatemo_487_fitness_F
 
             
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+            });
 
             var app = builder.Build();
 
