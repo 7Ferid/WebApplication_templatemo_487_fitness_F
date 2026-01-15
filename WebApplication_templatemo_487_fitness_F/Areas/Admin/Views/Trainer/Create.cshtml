@@ -1,0 +1,45 @@
+﻿@using WebApplication_templatemo_487_fitness_F.Models
+@using WebApplication_templatemo_487_fitness_F.ViewModels.TrainerViewModels
+@model TrainerCreateVM
+
+<div class="container">
+	<div class="row">
+        <form method="post" enctype="multipart/form-data" > 
+            <div class="form-group">
+                <label asp-for="Name" ></label>
+                <input asp-for="Name" class="form-control"  placeholder="Enter Name">
+                <span asp-validation-for="Name" class="text-danger" ></span>
+            
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Duties"></label>
+                <input asp-for="Duties" class="form-control" placeholder="Enter ">
+                <span asp-validation-for="Duties" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Image"></label>
+                <input asp-for="Image" class="form-control" placeholder="Enter Name">
+                <span asp-validation-for="Image" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartmentId"></label>
+                <select asp-for="DepartmentId" class="form-control">
+                    @foreach(Department department in ViewBag.Departments)
+                    {
+                        
+                    }
+
+                </select>
+                <span asp-validation-for="DepartmentId" class="text-danger"></span>
+
+            </div>
+
+     
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+	</div>
+</div>
