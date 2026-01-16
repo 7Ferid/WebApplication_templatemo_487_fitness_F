@@ -1,15 +1,15 @@
 ﻿@using WebApplication_templatemo_487_fitness_F.Models
 @using WebApplication_templatemo_487_fitness_F.ViewModels.TrainerViewModels
-@model TrainerCreateVM
+@model TrainerUpdateVM
 
 <div class="container">
-	<div class="row">
-        <form method="post" enctype="multipart/form-data" > 
+    <div class="row">
+        <form method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label asp-for="Name" ></label>
-                <input asp-for="Name" class="form-control"  placeholder="Enter Name">
-                <span asp-validation-for="Name" class="text-danger" ></span>
-            
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" placeholder="Enter Name">
+                <span asp-validation-for="Name" class="text-danger"></span>
+
             </div>
 
             <div class="form-group">
@@ -28,9 +28,9 @@
             <div class="form-group">
                 <label asp-for="DepartmentId"></label>
                 <select asp-for="DepartmentId" class="form-control">
-                    @foreach(Department department in ViewBag.Departments)
+                    @foreach (Department department in ViewBag.Departments)
                     {
-                        <option value="@department.Id" >@department.Name</option>
+                        <option value="@department.Id">@department.Name</option>
                     }
 
                 </select>
@@ -38,11 +38,11 @@
 
             </div>
 
-     
+
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-	</div>
+    </div>
 </div>
-@section Scripts{
+@section Scripts {
     <partial name="_ValidationScriptsPartial"></partial>
 }
